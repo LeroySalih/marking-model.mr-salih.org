@@ -1,0 +1,34 @@
+# Global environment variables shared by all functions in this project
+environment:
+  ENV_CHECK: "${ENV_CHECK}"
+  DIGITAL_OCEAN_ENDPOINT: "${DIGITAL_OCEAN_ENDPOINT}"
+  DIGITAL_OCEAN_ACCESS_KEY: "${DIGITAL_OCEAN_ACCESS_KEY}"
+
+packages:
+  - name: ai-marking
+    functions:
+      - name: marco-polo
+        runtime: 'nodejs:18'
+        web: true
+        limits:
+          timeout: 60000  # Set to 60,000ms (60 seconds)
+          memory: 256     # Recommended for basic AI logic
+
+      - name: short-text
+        runtime: 'nodejs:18'
+        web: true
+        limits:
+          timeout: 60000  # Set to 60,000ms (60 seconds)
+          memory: 512     # Higher memory recommended for 120B model processing
+        environment:
+          # Mapping specific aliases for the Gradient SDK
+          GRADIENT_MODEL_ACCESS_KEY: "${DIGITAL_OCEAN_ACCESS_KEY}"
+          GRADIENT_BASE_URL: "${DIGITAL_OCEAN_ENDPOINT}"
+
+  - name: sample
+    functions:
+      - name: hello
+        runtime: 'nodejs:18'
+        web: true
+        limits:
+          timeout: 15000  # 15 seconds is plenty for a hello function
