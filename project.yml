@@ -3,7 +3,9 @@ environment:
   ENV_CHECK: "${ENV_CHECK}"
   DIGITAL_OCEAN_ENDPOINT: "${DIGITAL_OCEAN_ENDPOINT}"
   DIGITAL_OCEAN_ACCESS_KEY: "${DIGITAL_OCEAN_ACCESS_KEY}"
-
+  MARKING_QUEUE_SECRET: "${MARKING_QUEUE_SECRET}"
+  MARK_SERVICE_KEY: "${MARK_SERVICE_KEY}"
+  
 packages:
   - name: ai-marking
     functions:
@@ -24,6 +26,19 @@ packages:
           # Mapping specific aliases for the Gradient SDK
           GRADIENT_MODEL_ACCESS_KEY: "${DIGITAL_OCEAN_ACCESS_KEY}"
           GRADIENT_BASE_URL: "${DIGITAL_OCEAN_ENDPOINT}"
+
+      - name: short-text
+        runtime: 'nodejs:18'
+        web: true
+        limits:
+          timeout: 60000  # Set to 60,000ms (60 seconds)
+          memory: 512     # Higher memory recommended for 120B model processing
+        environment:
+          # Mapping specific aliases for the Gradient SDK
+          GRADIENT_MODEL_ACCESS_KEY: "${DIGITAL_OCEAN_ACCESS_KEY}"
+          GRADIENT_BASE_URL: "${DIGITAL_OCEAN_ENDPOINT}"
+          MARKING_QUEUE_SECRET: "${MARKING_QUEUE_SECRET}"
+          MARK_SERVICE_KEY: "${MARK_SERVICE_KEY}"
 
   - name: sample
     functions:

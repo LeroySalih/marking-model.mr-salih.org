@@ -1,0 +1,16 @@
+0 verbose cli /usr/local/bin/node /usr/local/bin/npm
+1 info using npm@10.9.2
+2 info using node@v23.11.0
+3 silly config load:file:/usr/local/lib/node_modules/npm/npmrc
+4 silly config load:file:/Users/leroysalih/.npmrc
+5 silly config load:file:/usr/local/etc/npmrc
+6 verbose title npm prefix
+7 verbose argv "prefix" "--global"
+8 verbose logfile logs-max:10 dir:/Users/leroysalih/nodejs/marking-model/.npm-cache/_logs/2026-01-17T13_01_41_140Z-
+9 verbose logfile /Users/leroysalih/nodejs/marking-model/.npm-cache/_logs/2026-01-17T13_01_41_140Z-debug-0.log
+10 verbose cwd /Users/leroysalih/nodejs/marking-model
+11 verbose os Darwin 24.5.0
+12 verbose node v23.11.0
+13 verbose npm  v10.9.2
+14 verbose exit 0
+15 info ok

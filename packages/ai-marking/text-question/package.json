@@ -1,0 +1,20 @@
+{
+  "name": "text-question",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "This function will assess the type of question,apply the correct prompt and return feedback from the model",
+  "main": "index.js",
+  "dependencies": {
+    "@digitalocean/gradient": "^0.1.0-alpha.2",
+    "dotenv": "^17.2.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "author": "Leroy",
+  "license": "ISC",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": []
+}
